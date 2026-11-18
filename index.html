@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farmer Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">🌾 SmartFarm</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#crops">Crops</a>
+            <a href="#soil">Soil Testing</a>
+            <a href="#weather">Weather</a>
+            <a href="#market">Market Prices</a>
+        </nav>
+
+        <button class="nav-btn" onclick="scrollToSection('market')">
+            Check Prices
+        </button>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">🌱 SMART AGRICULTURE PLATFORM</span>
+
+            <h1>Grow Smarter.<br>
+                Harvest Better.</h1>
+
+            <p>
+                Your digital farming assistant for crop management,
+                soil health, weather updates and smarter market decisions.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="scrollToSection('crops')">
+                    Explore Farming
+                </button>
+
+                <button class="secondary-btn"
+                    onclick="scrollToSection('market')">
+                    Explore Market Prices
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section class="dashboard section">
+        <div class="section-heading">
+            <span>YOUR FARMING OVERVIEW</span>
+            <h2>Farmer Dashboard</h2>
+            <p>Important information in one place.</p>
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="stat-card">
+                <span>🌡️</span>
+                <h3 id="temperature">-- °C</h3>
+                <p>Temperature</p>
+            </div>
+
+            <div class="stat-card">
+                <span>💧</span>
+                <h3 id="humidity">-- %</h3>
+                <p>Humidity</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🌧️</span>
+                <h3 id="rainfall">--</h3>
+                <p>Rain Forecast</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🌾</span>
+                <h3>6+</h3>
+                <p>Farming Tools</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CROP INFORMATION -->
+    <section class="section" id="crops">
+
+        <div class="section-heading">
+            <span>SMART CROP MANAGEMENT</span>
+            <h2>Crop Information</h2>
+            <p>Learn about crops and their growing requirements.</p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>🌾 Wheat</h3>
+                <p>Growing season, irrigation and fertilizer information.</p>
+                <button onclick="showCrop('Wheat')">Explore</button>
+            </div>
+
+            <div class="feature-card">
+                <h3>🍚 Rice</h3>
+                <p>Rice cultivation, water management and crop care.</p>
+                <button onclick="showCrop('Rice')">Explore</button>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌽 Maize</h3>
+                <p>Maize growing conditions and nutrient requirements.</p>
+                <button onclick="showCrop('Maize')">Explore</button>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌻 Mustard</h3>
+                <p>Mustard farming and seasonal cultivation guide.</p>
+                <button onclick="showCrop('Mustard')">Explore</button>
+            </div>
+
+        </div>
+
+        <div id="crop-result" class="result-box"></div>
+
+    </section>
+
+
+    <!-- SOIL TESTING -->
+    <section class="section" id="soil">
+
+        <div class="section-heading">
+            <span>UNDERSTAND YOUR LAND</span>
+            <h2>Smart Soil Testing</h2>
+            <p>Enter your soil laboratory or sensor readings.</p>
+        </div>
+
+        <div class="tool-card">
+
+            <label>Soil pH</label>
+            <input type="number" id="ph" placeholder="Example: 6.5"
+                min="0" max="14" step="0.1">
+
+            <label>Nitrogen (N) - mg/kg</label>
+            <input type="number" id="nitrogen" placeholder="Enter nitrogen">
+
+            <label>Phosphorus (P) - mg/kg</label>
+            <input type="number" id="phosphorus" placeholder="Enter phosphorus">
+
+            <label>Potassium (K) - mg/kg</label>
+            <input type="number" id="potassium" placeholder="Enter potassium">
+
+            <button onclick="testSoil()">Analyze Soil</button>
+
+            <div id="soil-result" class="result-box"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEED TESTING -->
+    <section class="section" id="seeds">
+
+        <div class="section-heading">
+            <span>SEED QUALITY ANALYSIS</span>
+            <h2>Seed Germination Test</h2>
+            <p>Calculate the percentage of seeds that germinate.</p>
+        </div>
+
+        <div class="tool-card">
+
+            <label>Total seeds tested</label>
+            <input type="number" id="total-seeds"
+                placeholder="Example: 100" min="1">
+
+            <label>Seeds germinated</label>
+            <input type="number" id="germinated-seeds"
+                placeholder="Example: 85" min="0">
+
+            <button onclick="testSeeds()">Calculate Germination</button>
+
+            <div id="seed-result" class="result-box"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WEATHER -->
+    <section class="section" id="weather">
+
+        <div class="section-heading">
+            <span>WEATHER INTELLIGENCE</span>
+            <h2>Live Weather Updates</h2>
+            <p>Check weather conditions before planning farm activities.</p>
+        </div>
+
+        <div class="tool-card">
+
+            <label>Enter your city</label>
+
+            <input type="text" id="city"
+                placeholder="Example: Phagwara">
+
+            <button onclick="getWeather()">Check Weather</button>
+
+            <div id="weather-result" class="result-box"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MARKET PRICES -->
+    <section class="section" id="market">
+
+        <div class="section-heading">
+            <span>MARKET INTELLIGENCE</span>
+            <h2>AI Mandi Price Finder</h2>
+            <p>Compare agricultural prices across different markets.</p>
+        </div>
+
+        <div class="tool-card">
+
+            <label>Select crop</label>
+
+            <select id="crop-select">
+                <option value="Wheat">Wheat</option>
+                <option value="Rice">Rice</option>
+                <option value="Maize">Maize</option>
+                <option value="Mustard">Mustard</option>
+            </select>
+
+            <label>Select state</label>
+
+            <select id="state-select">
+                <option value="All">All India</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+            </select>
+
+            <button onclick="findPrices()">Compare Prices</button>
+
+            <div id="price-result" class="result-box"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFIT CALCULATOR -->
+    <section class="section" id="profit">
+
+        <div class="section-heading">
+            <span>FARM FINANCIAL PLANNER</span>
+            <h2>Crop Profit Calculator</h2>
+        </div>
+
+        <div class="tool-card">
+
+            <label>Total farming cost (₹)</label>
+            <input type="number" id="cost" placeholder="Enter total expenses">
+
+            <label>Production (quintals)</label>
+            <input type="number" id="production" placeholder="Enter production">
+
+            <label>Selling price per quintal (₹)</label>
+            <input type="number" id="selling-price" placeholder="Enter price">
+
+            <button onclick="calculateProfit()">Calculate Profit</button>
+
+            <div id="profit-result" class="result-box"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>🌾 SmartFarm Assistant</h2>
+        <p>Technology for smarter and sustainable farming.</p>
+        <p>© 2026 SmartFarm. All rights reserved.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

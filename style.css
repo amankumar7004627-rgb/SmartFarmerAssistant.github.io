@@ -1,0 +1,679 @@
+
+/* =====================================
+   SMART FARM ASSISTANT
+   Professional Website Design
+===================================== */
+
+/* 1. GLOBAL SETTINGS */
+
+.price-highlight {
+    background: #eaf7ee;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 12px;
+}
+
+.price-highlight h2 {
+    color: #176b3a;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table-wrapper th {
+    background: #176b3a;
+    color: white;
+}
+
+.data-note {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #176b3a;
+    --secondary: #2e9d59;
+    --light-green: #eaf7ee;
+    --dark: #163322;
+    --white: #ffffff;
+    --text: #526358;
+    --red: #dc2626;
+    --light-red: #fff1f1;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fbf8;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+button, input, select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 2. NAVBAR */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: #45564a;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--secondary);
+}
+
+.nav-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.nav-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 540px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+        rgba(8, 48, 25, 0.92),
+        rgba(13, 70, 35, 0.65)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 680px;
+    color: white;
+    animation: slideUp 0.9s ease;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.15;
+    margin: 25px 0;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #e3eee5;
+    max-width: 560px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero-buttons button {
+    background: #39a85e;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.hero-buttons button:hover {
+    background: #258346;
+    transform: translateY(-3px);
+}
+
+.hero-buttons .secondary-btn {
+    background: white;
+    color: var(--primary);
+}
+
+.hero-buttons .secondary-btn:hover {
+    background: #eaf7ee;
+}
+
+
+/* 4. COMMON SECTION */
+
+.section {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    color: var(--dark);
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: var(--text);
+    font-size: 15px;
+}
+
+
+/* 5. DASHBOARD */
+
+.dashboard {
+    background: white;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.stat-card {
+    background: #f2faf4;
+    padding: 28px 20px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #e1f0e4;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    background: white;
+}
+
+.stat-card span {
+    font-size: 32px;
+}
+
+.stat-card h3 {
+    color: var(--primary);
+    font-size: 26px;
+    margin: 10px 0 4px;
+}
+
+.stat-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+
+/* 6. FEATURE CARDS */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    background: white;
+    padding: 28px 22px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 1px solid #edf3ee;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #9bd5aa;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: var(--text);
+    font-size: 14px;
+    min-height: 70px;
+}
+
+.feature-card button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 7px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.feature-card button:hover {
+    background: var(--secondary);
+}
+
+
+/* 7. TOOL CARDS
+   Soil, Seed, Weather, Mandi, Profit
+*/
+
+.tool-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid #e8f1e9;
+}
+
+.tool-card label {
+    display: block;
+    margin: 17px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.tool-card input,
+.tool-card select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d8e5da;
+    background: #fbfdfb;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.tool-card input:focus,
+.tool-card select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(46,157,89,0.12);
+}
+
+.tool-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 23px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.tool-card button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+
+/* 8. RESULT BOX */
+
+.result-box {
+    display: none;
+    margin-top: 22px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--light-green);
+    border-left: 4px solid var(--secondary);
+    color: var(--dark);
+    line-height: 1.8;
+}
+
+.result-box.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+
+/* 9. RED ALERT CENTRE */
+
+.alert-section {
+    padding: 55px 8%;
+    background: var(--light-red);
+    border-top: 1px solid #fecaca;
+    border-bottom: 1px solid #fecaca;
+}
+
+.alert-heading {
+    margin-bottom: 25px;
+}
+
+.alert-heading span {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.alert-heading h2 {
+    color: #991b1b;
+    margin-top: 8px;
+    font-size: 30px;
+}
+
+.alert-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.alert-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px;
+    background: white;
+    border-left: 5px solid var(--red);
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(220,38,38,0.08);
+    transition: 0.3s;
+}
+
+.alert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(220,38,38,0.13);
+}
+
+.alert-card > span {
+    font-size: 30px;
+}
+
+.alert-card h3 {
+    color: #b91c1c;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.alert-card p {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.alert-card strong {
+    margin-left: auto;
+    flex-shrink: 0;
+    color: white;
+    background: var(--red);
+    border-radius: 50%;
+    padding: 3px 11px;
+}
+
+
+/* 10. FOOTER */
+
+footer {
+    background: #102e1d;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer h2 {
+    color: #70d48f;
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #c5d9ca;
+    font-size: 13px;
+    margin: 7px 0;
+}
+
+
+/* 11. ANIMATIONS */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 12. TABLET RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alert-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+}
+
+
+/* 13. MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+    }
+
+    .section {
+        padding: 50px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 20px 10px;
+    }
+
+    .stat-card h3 {
+        font-size: 21px;
+    }
+
+    .tool-card {
+        padding: 22px 17px;
+    }
+
+    .alert-section {
+        padding: 40px 6%;
+    }
+
+    .alert-heading h2 {
+        font-size: 25px;
+    }
+
+    .alert-card {
+        padding: 16px;
+    }
+}
+
+
+/* 14. SMALL MOBILE SCREEN */
+
+@media (max-width: 360px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+}
